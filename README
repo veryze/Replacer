@@ -1,0 +1,11 @@
+made by mana ganesh on 8 sep 2024. to be used for priv use only. made for a friend!!
+
+firefox extension. for easy, priv use: 
+
+> download this repo
+> go to about:debugging
+> go to 'this firefox'
+> under 'temporary extensions', click 'load temporary add-on...'
+> select + upload manifest.json from this repo
+
+done! it should be accessible from your toolbar ^-^
