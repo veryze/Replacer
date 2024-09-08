@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+html, body {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup-content {
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden;
+    
+    max-width: 100%;
+    margin: 20px auto;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+textarea {
+
+    width: calc(100% - 60px);
+    height: 80px;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    resize: none;
+}
+
+button {
+    border: none;
+    width: 90%;
+    
+    padding: 12px;
+    text-align: center;
+    align-self: center;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    background-color:rgba(64, 182, 180, 0.508)
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+
+.text-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text-field .replacement-text {
+   width: 100%; 
+    padding: 12px;
+    flex-grow: 1;
+}
+
+.text-field .label {
+  margin-bottom: 5px; 
+  display: block; 
+}
+
+.text-field .hint {
+  margin-top: 5px;
+  font-size: 0.9em; 
+  color: #666;
+  text-align: center; 
+}
