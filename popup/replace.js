@@ -2,35 +2,47 @@
 
 
 
-document.addEventListener('DOMContentLoaded', () => {document.getElementById('replaceButton').addEventListener('click', () => {
-  var oldText = document.getElementById('oldText').value;
-  var newText = document.getElementById('newText').value;
 
-  var array = newText.split(", ").filter(text => text.trim() !== "");
-  
-  if (array.length === 0) {
-    console.error('The replacement text array is empty.');
-    array.push(oldText);
+
+let isNotCaseSensitive = false;
+
+document.querySelector('.switch input').addEventListener('change', function () {
+  isNotCaseSensitive = this.checked;
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('replaceButton').addEventListener('click', () => {
+    var oldText = document.getElementById('oldText').value;
+    var newText = document.getElementById('newText').value;
+
+    if (!oldText || !newText) {
+      alert('Please enter both old text and replacement text.');
+      return;
   }
 
-  const min = 0;
-  var max = array.length;
-
-  var randomnumber = Math.floor(Math.random() * max);
-
-  var repText = array[randomnumber];
+    var array = newText.split(", ").filter(text => text.trim() !== "");
 
 
-  
-  console.log('Old Text:', oldText);
-  console.log('Replacement Text:', repText);
+    const min = 0;
+    var max = array.length;
+
+    var randomnumber = Math.floor(Math.random() * max);
+
+    var repText = array[randomnumber];
 
 
 
-  // message sent to content.js
+    console.log('Old Text:', oldText);
+    console.log('Replacement Text:', repText);
 
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { action: 'replaceText', oldText, repText });
+
+
+    // message sent to content.js
+
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(tabs[0].id, { action: 'replaceText', oldText, repText, isNotCaseSensitive });
+    });
   });
-});
 });
