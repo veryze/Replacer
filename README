@@ -1,11 +1,5 @@
 made by mana ganesh on 8 sep 2024. to be used for priv use only. made for a friend!!
 
-firefox extension. for easy, priv use: 
+firefox extension. found at https://addons.mozilla.org/en-US/firefox/addon/replace-text/
 
-> download this repo
-> go to about:debugging
-> go to 'this firefox'
-> under 'temporary extensions', click 'load temporary add-on...'
-> select + upload manifest.json from this repo
-
-done! it should be accessible from your toolbar ^-^
+if you want to redistribute this, please make sure to credit me and not make it paid <3 thank you
